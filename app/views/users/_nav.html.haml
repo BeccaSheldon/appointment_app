@@ -1,0 +1,24 @@
+.row
+  .columns.large-3
+    = link_to 'Home', root_url
+  - if user_signed_in?
+    .columns.large-3 
+      = link_to 'My Account', user_url(current_user.id)
+    .columns.large-3
+      = link_to 'Edit profile', edit_user_registration_path
+    .columns.large-3
+      = link_to "Sign out", destroy_user_session_path, method: :delete
+  - else
+    .columns.large-3
+      = link_to "Become a Member", new_user_registration_path
+    .columns.large-3
+      = link_to "Member Login", new_user_session_path
+    .columns.large-3
+      = link_to "Our Story"
+.row
+  .columns.large-6
+    %p.notice= notice unless notice.blank?
+  .columns.large-6
+    %p.alert= alert unless alert.blank?
+.row
+  .columns.large-12

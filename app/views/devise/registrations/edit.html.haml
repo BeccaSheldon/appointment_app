@@ -1,0 +1,44 @@
+=render '/users/nav'
+.row
+  .columns.large-12
+    %h4 Edit #{resource_name.to_s.humanize}
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = devise_error_messages!
+  .row
+    .columns.large-4
+      = f.label :name
+      = f.text_field :name
+    .columns.large-4
+      = f.label :image
+      = f.file_field :image, :autofocus => true
+    .columns.large-4
+      = f.label :email
+      = f.email_field :email
+  .row    
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    .columns.large-12
+      Currently waiting confirmation for: #{resource.unconfirmed_email}
+  .row
+    .columns.large-4
+      = f.label :password, :placeholder => "leave blank if you don't want to change it"
+      %br
+      = f.password_field :password, :autocomplete => "off"
+    .columns.large-4
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+    .columns.large-4
+      = f.label :current_password, :placeholder => "needed to confirm your changes"
+      = f.password_field :current_password
+  .row
+    .columns.large-12
+      = f.submit "Update", class: "full_button"
+  .row
+    .columns.large-12
+      %h3 Cancel Meet2Talk Membership
+    .columns.large-12
+      %p
+        Click #{link_to "here", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete} to cancel your account. 
+  .row
+    .columns.large-12
+      = link_to "Back", :back, class: "half_button"
+

@@ -1,0 +1,38 @@
+
+=render "nav"
+
+.row
+	.columns.large-12
+		%h2 You're viewing #{@user.name}'s profile
+		%br
+.row
+	.columns.large-4
+		= image_tag @user.image.url(:thumb)
+		%br
+	/ .columns.large-4
+	/ 	= f.label :bio
+	/ 	= f.text_field :bio
+	/ .columns.large-4
+	/ 	= f.label :skills
+	/ 	= f.text_field :skills
+.row
+%br
+	.columns.large-12
+		%h3 Make an appointment with #{@user.name}
+		%br
+.row
+=form_for @appointment do |f|
+	.columns.large-6
+		= f.label :location
+		= f.text_field :location
+	.columns.large-6
+		= f.label :time 
+		= f.date_select :time, :order => [:month, :day, :year, :hour, :minute]
+	.columns.large-12
+		= f.submit "submit", class: "full_button"
+
+.row
+	.columns.large-12
+		%h3 Here's what #{@user.name} has coming up
+	.columns.large-12
+		=render "calendar"

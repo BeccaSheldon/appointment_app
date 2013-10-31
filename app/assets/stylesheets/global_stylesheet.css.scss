@@ -1,0 +1,124 @@
+///////////////////////////////////////////////////////////////
+//                                                           //
+//                                                           //
+//                       Variables                           //
+//                                                           //
+//                                                           //
+///////////////////////////////////////////////////////////////
+
+$jade: #285648;
+$current: #3F1129;
+$cement: #E2E2D5;
+$white: #FFFFFF;
+$mustard: #FACE06;
+
+
+// Minty Green = #22EFA4
+
+///////////////////////////////////////////////////////////////
+//                                                           //
+//                                                           //
+//                        Mixins                             //
+//                                                           //
+//                                                           //
+///////////////////////////////////////////////////////////////
+
+@mixin breakpoint($point) {
+  @if $point == papa-bear {
+    // Medium-screen is set in foundation.
+    @media all and (min-width: $medium-screen) { @content; }
+  }
+  @else if $point == mama-bear {
+    // Small-screen ise t in foundation.
+    @media all and (min-width: $small-screen)  { @content; }
+  }
+}
+
+
+@mixin clear-fix() {
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+///////////////////////////////////////////////////////////////
+//                                                           //
+//                                                           //
+//                        BUTTONS                            //
+//                                                           //
+//                                                           //
+///////////////////////////////////////////////////////////////
+
+.full_button{
+  @extend .button;
+  @extend .small;
+  @extend .radius;
+  @extend .expand;
+}
+
+.half_button{
+  @extend .button;
+  @extend .small;
+  @extend .radius;
+  @extend .right;
+}
+
+///////////////////////////////////////////////////////////////
+//                                                           //
+//                                                           //
+//                        Global                             //
+//                                                           //
+//                                                           //
+///////////////////////////////////////////////////////////////
+
+
+body{
+  color: $mustard;
+  background: $jade;
+  font-family: "Raleway", Arial, sans-serif;
+  @include breakpoint(mama-bear){
+    margin-top: 62px;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  color: $white;
+  font-family: "Raleway";
+  padding: 0;
+  margin: 0;
+}
+
+.full_button{
+  background-color: $white;
+  color: $jade;
+  &:hover{
+    background-color: $current;
+  }
+  border: none;
+  box-shadow: none;
+} 
+
+label{
+  color: $white;
+  font-family: "Raleway";
+}
+
+a:active {
+  color: $white;
+}
+
+a:visited {
+  color: $white;
+}
+
+img{
+  border: 1px solid black;
+}
+
+

@@ -1,0 +1,15 @@
+=render "nav"
+
+.row
+	.columns.large-12
+		%h1 Welcome to Meet2Talk!
+		%br
+.row	
+	.columns.large-12
+		%h4 Check out these new Meet2Talk members!
+	- @users.each do |user| 
+		.columns.large-12
+			%br
+			= link_to user.name, user_path(user)
+
+
