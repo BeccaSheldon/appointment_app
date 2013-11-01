@@ -1,4 +1,4 @@
-.row
+%ul.row#nav
   .columns.large-3
     = link_to 'Home', root_url
   - if user_signed_in?
@@ -22,3 +22,5 @@
     %p.alert= alert unless alert.blank?
 .row
   .columns.large-12
+
+= stylesheet_link_tag "assets/stylesheets/nav_styleseet"

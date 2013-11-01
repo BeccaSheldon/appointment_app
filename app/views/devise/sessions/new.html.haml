@@ -3,14 +3,16 @@
   .columns.large-12
     %h4 Sign in
     %br
-.row
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  .columns.large-6
-    = f.label :email
-    = f.email_field :email, :autofocus => true
-  .columns.large-6
-    = f.label :password
-    = f.password_field :password
   .row
-    .columns.large-12
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    .columns.large-6
+      = f.label :email
+      = f.email_field :email, :autofocus => true
+    .columns.large-6
+      = f.label :password
+      = f.password_field :password
+    .row
+    .columns.large-6
+      = link_to "Or Become a Member", new_user_registration_path, class: "full_button"
+    .columns.large-6
       = f.submit "Sign in", class: "full_button"

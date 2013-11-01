@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-
-gem 'backbone-on-rails'
+gem 'jquery-ui-rails'
 
 gem 'zurb-foundation'
 

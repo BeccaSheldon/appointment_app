@@ -18,25 +18,5 @@
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
     %body
-    
-      = yield
       = javascript_include_tag "application"
-
-  / %body
-  /   = link_to 'Home', root_url
-  /   |
-  /   - if user_signed_in?
-  /     = link_to 'My Account', user_url(current_user.id)
-  /     |
-  /     = link_to 'Edit profile', edit_user_registration_path
-  /     |
-  /     = link_to "Sign out", destroy_user_session_path, method: :delete
-  /   - else
-  /     = link_to "Join", new_user_registration_path
-  /     |
-  /     = link_to "Sign In", new_user_session_path
-
-  /   %p.notice= notice unless notice.blank?
-  /   %p.alert= alert unless alert.blank?
-  /   = yield
-  /   = javascript_include_tag "application"
+      = yield
