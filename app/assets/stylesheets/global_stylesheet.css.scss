@@ -75,6 +75,10 @@ $aqua:  #53CFD6;
 //                                                           //
 ///////////////////////////////////////////////////////////////
 
+// @font-face {
+//   font-family: "Canter";
+//   src: url(font-path("Canter Bold Shadow.otf"));
+// }
 
 body{
   color: $blue;
@@ -87,7 +91,7 @@ body{
 
 h1, h2, h3, h4, h5 {
   color: $white;
-  font-family: "Raleway";
+  font-family: "Prosto One";
   padding: 0;
   margin: 0;
 }

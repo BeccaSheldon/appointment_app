@@ -18,5 +18,16 @@
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
     %body
+
       = javascript_include_tag "application"
       = yield
+      
+      / :javascript
+      /   window.g = {
+      /     - if current_user? 
+      /       username: #{@current_user.name}
+      /     - else
+      /       some code
+      /   };
+      / = javascript_include_tag "application"
+      / = yield :javascript

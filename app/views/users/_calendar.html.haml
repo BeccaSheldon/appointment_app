@@ -1,4 +1,6 @@
 - if current_user.id.to_s == params[:id]
 	= @my_appointments.each do |appointment|
-		%div= appointment.location
-		%div= appointment.time
+		%div.location= appointment.location
+		%div.date= appointment.time
+
+/ backbone javascript calendar code
