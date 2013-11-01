@@ -6,13 +6,12 @@
 //                                                           //
 ///////////////////////////////////////////////////////////////
 
-$jade: #285648;
-$current: #3F1129;
-$cement: #E2E2D5;
+$blue:  #285EF8;
+$gray:  #212121;
+$beige: #EECF99;
 $white: #FFFFFF;
-$mustard: #FACE06;
-
-// Minty Green = #22EFA4
+$green: #22EFA4;
+$aqua:  #53CFD6;
 
 ///////////////////////////////////////////////////////////////
 //                                                           //
@@ -78,8 +77,8 @@ $mustard: #FACE06;
 
 
 body{
-  color: $mustard;
-  background: $jade;
+  color: $blue;
+  background: $gray;
   font-family: "Raleway", Arial, sans-serif;
   @include breakpoint(mama-bear){
     margin-top: 62px;
@@ -94,30 +93,52 @@ h1, h2, h3, h4, h5 {
 }
 
 .full_button{
-  background-color: $white;
-  color: $jade;
+  background-color: $blue;
+  color: $white;
   &:hover{
-    background-color: $current;
+    background-color: lighten($green, 20%);
+    color: $gray;
+  }
+  border: none;
+  box-shadow: none;
+} 
+
+.half_button{
+  background-color: $blue;
+  color: $white;
+  &:visited{
+    color: $white;
+  }
+  &:hover{
+    background-color: lighten($green, 20%);
+    color: $gray;
   }
   border: none;
   box-shadow: none;
 } 
 
 label{
-  color: $white;
+  color: lighten($green, 20%);
   font-family: "Raleway";
 }
 
-a:active {
-  color: $mustard;
-}
-
 a:visited {
-  color: $mustard;
+  color: $blue;
 }
 
 img{
   border: 1px solid black;
 }
 
+// This will only style the ul li of the error_explanation div
+#error_explanation{
+  color: red;
+}
 
+#error_explanation h1, h2{
+  color: red;
+}
+
+#error_explanation ul li{
+  list-style: none;
+}

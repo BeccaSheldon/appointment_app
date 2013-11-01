@@ -1,8 +1,8 @@
 =render "nav"
 
 // automatically will search app/assets/js and app/vendor/js 
-// looking for a javascript file --> add path if nested w/in
-// another folder in these paths
+// looking for a javascript file 
+// add path if nested w/in another folder in these paths
 = javascript_include_tag "users/users"
 
 .row
@@ -14,21 +14,19 @@
 		= image_tag @user.image.url(:thumb)
 		%br
 .row
-%br
 	.columns.large-12
 		%h3 Make an appointment with #{@user.name}
-		%br
 .row
-=form_for @appointment do |f|
-	.columns.large-6
-		= f.label :location
-		= f.text_field :location
-	.columns.large-6
-		= f.label :time 
-		= f.text_field :time
-		/ = f.date_select :time, :order => [:month, :day, :year, :hour, :minute]
-	.columns.large-12
-		= f.submit "submit", class: "full_button"
+	=form_for @appointment do |f|
+		.columns.large-6
+			= f.label :location
+			= f.text_field :location
+		.columns.large-6
+			= f.label :time 
+			= f.text_field :time
+			/ = f.date_select :time, :order => [:month, :day, :year, :hour, :minute]
+		.columns.large-3
+			= f.submit "Schedule it!", class: "full_button"
 
 .row
 	.columns.large-12
