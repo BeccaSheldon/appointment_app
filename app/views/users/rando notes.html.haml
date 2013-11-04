@@ -1,0 +1,71 @@
+Confirmations:
+-send email
+-should be able to look at cal, see unaccepted and confirm/deny from there
+
+can color code by user id (inviter in one color, requester in another --> get grid setup first, get appointments by date, then go through and look for user id and colorcode)
+
+
+rework setup by the way you want it set up (visually) 
+use divs vs table
+
+
+/ - if current_user.id.to_s == params[:id]
+/ 	= calendar_for(@my_appointments) do |appointment|
+/ 		= appointment.head('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
+/ 		= appointment.day do |day, appointments|
+/ 			= day.day 
+/ 			- appointments.each do |appointment| 
+/ 				= appointment.location
+
+
+/ .row#calendar
+/ 	.row#month
+/ 		= link_to :month => (@date.beginning_of_month-1).strftime("%Y-%m-01")
+/ 		= h @date.strftime("%B %Y")
+/ 		= link_to :month => (@date.end_of_month+1).strftime("%Y-%m-01")
+/ 	- calendar_for @my_appointments, :year => @date.year, :month => @date.month do |calendar|
+/ 		= calendar.head('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
+/ 		- calendar.day(:day_method => :appointment) do |date, appointment|
+/ 			= date.day
+
+
+/  - if current_user.id.to_s == params[:id]
+/ 	= @my_appointments.each do |appointment|
+/ 		%div.location= appointment.location
+/ 		%div.date= appointment.time
+
+
+/ - if current_user.id.to_s == params[:id]
+/ 	= calendar_for(@my_appointments) do |a|
+/ 		= a.head('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
+/ 		= a.day do |day, appointments|
+/ 			= day.day
+/ 			- appointments.each do |appointment|
+/ 				= h(appointment.location)
+
+
+/ .row#calendar
+/ 	.columns.large-12
+/ 		%h5 This Month's Appointments
+/ 	.row
+/ 		.columns.large-12
+/ 		- if current_user.id.to_s == params[:id]
+/ 			=	@my_appointments.each do |appointment|
+/ 				= appointment.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
+/ 				- appointment.day(:day_method => :time) do |date, appointment|
+/ 					= date.day
+
+
+/ MEET2TALK Work:
+
+/ -Fix Carrierwave
+/ -Add Devise w/ OmniAuth for Facebook
+/ -Review Search logic
+/ -Add Appointments logic
+/ -Add jQuery UI? + DateSelector
+/ -Add Calendar view code
+
+/ APPTAPP: 
+
+/ -Fix Calendar view code before adding to MEET2TALK
+/ --> Get it all checked w/ Lance first

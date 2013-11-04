@@ -1,0 +1,11 @@
+#calendar {
+	border: $white solid 2px;
+  border-collapse: collapse;
+  width: 100%;
+  color: $white;
+}
+
+#calendar ul li {
+	display: inline-block;
+	width: 100px;
+}

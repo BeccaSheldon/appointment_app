@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   private 
 
   def appt_params
-    params[:appointment].permit(:location, :time)
+    params[:appointment].permit(:location, :time, :date)
   end
 
 end

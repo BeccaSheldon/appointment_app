@@ -91,7 +91,7 @@ body{
 
 h1, h2, h3, h4, h5 {
   color: $white;
-  font-family: "Prosto One";
+  font-family: "Raleway", Arial, sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -123,7 +123,7 @@ h1, h2, h3, h4, h5 {
 
 label{
   color: lighten($green, 20%);
-  font-family: "Raleway";
+  font-family: "Raleway", Arial, sans-serif;
 }
 
 a:visited {
@@ -134,15 +134,15 @@ img{
   border: 1px solid black;
 }
 
-// This will only style the ul li of the error_explanation div
+// Devise Error Message Styling
 #error_explanation{
-  color: red;
+  h1, h2, h3, h4, h5, h6{ 
+    color: red;
+  }
+  ul li{
+    color: red;
+    list-style: none;
+  }
 }
 
-#error_explanation h1, h2{
-  color: red;
-}
 
-#error_explanation ul li{
-  list-style: none;
-}

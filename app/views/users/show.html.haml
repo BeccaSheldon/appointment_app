@@ -1,16 +1,13 @@
 =render "nav"
-
-// automatically will search app/assets/js and app/vendor/js 
-// looking for a javascript file 
-// add path if nested w/in another folder in these paths
-= javascript_include_tag "users/users"
+=javascript_include_tag "users/users"
 
 .row
 	.columns.large-12
-		- if current_user.id.to_s == [params[:id]]
-			= "#{@current_user}'s Homepage"
+		- if @user == current_user
+			/ %h2 #{@user.name}'s homepage
+			%h2 My Homepage
 		- else
-			= "#{current_user}'s Profile"
+			%h2 #{@user.name}'s profile
 .row
 	.columns.large-4
 		= image_tag @user.image.url(:thumb)
@@ -26,15 +23,19 @@
 		.columns.large-6
 			= f.label :time 
 			= f.text_field :time
-			/ = f.date_select :time, :order => [:month, :day, :year, :hour, :minute]
+		.columns.large-3
+			= f.label :date
+			= f.text_field :date
 		.columns.large-3
 			= f.submit "Schedule it!", class: "full_button"
 
 .row
 	.columns.large-12
-		%h3 Here's what #{@user.name} has coming up
+		- if current_user.id == params[:id]
+			%h3 Your Schedule:
+		- else
+			%h3 #{@user.name.upcase}'s Schedule:
+			%br/
 	.columns.large-12.appointments_view
-		=render "calendar"
+		=render 'users/calendar'
 
-/ = content_for :javascript
-/ 	=render "calendar"

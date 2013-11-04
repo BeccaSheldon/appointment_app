@@ -1,6 +1,22 @@
-- if current_user.id.to_s == params[:id]
-	= @my_appointments.each do |appointment|
-		%div.location= appointment.location
-		%div.date= appointment.time
+/ - if current_user.id.to_s == params[:id]
+/ 	= @my_appointments.each do |appointment|
+/ 		%div.location= appointment.location
+/ 		%div.date= appointment.time
 
-/ backbone javascript calendar code
+%div#calendar
+	%div#month= link_to Time.now.strftime('%B, %Y')
+	%ul.calendar_week
+		%li.weekday
+			%p #{Time.now.strftime('%d')}
+		%li.weekday
+			%p #{Time.now.strftime('%d')}
+		%li.weekday
+			%p #{Time.now.strftime('%d')}
+		%li.weekday
+			%p #{Time.now.strftime('%d')}
+		%li.weekday
+			%p #{Time.now.strftime('%d')}
+		%li.weekday
+			%p #{Time.now.strftime('%d')}
+
+= stylesheet_link_tag "assets/stylesheets/calendar_stylesheet"

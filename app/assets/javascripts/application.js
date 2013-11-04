@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery.ui.all
+//= require jquery.timepicker.js
 //= require_self
 
 $(function(){ $(document).foundation(); });

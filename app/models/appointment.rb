@@ -15,6 +15,19 @@ class Appointment < ActiveRecord::Base
     end
     results
   end
+
+  def date
+    self.time
+    # @date = params[:date] ? Date.parse(params[:date]) : Date.today
+  end
 end
 
+  # scope :by_date, ->(date) {where("time = ?", date)}
 
+  # def self.get_my_appointments(user_id)
+  #   self.by_date(date).my_invites(user_id).each do |column|
+  #   end
+  #   self.by_date(date).my_requests(user_id).each do |column|
+  #   end
+  #   results
+  # end
