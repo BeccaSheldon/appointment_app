@@ -160,7 +160,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
-  fullcalendar-rails (~> 1.6.4.0)
+  fullcalendar-rails
   google-webfonts
   haml
   hirb
