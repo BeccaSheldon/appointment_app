@@ -8,8 +8,6 @@
 			dateFormat: 'yy-mm-dd'
 		});
 
-		$('input[name="appointment[date]"]').timepicker({
-			
-		});
-
+		$('input[name="appointment[date]"]').timepicker({'timeFormat': 'g:ia'});
+		$('input[name="appointment[date]"]').timepicker({ 'step': 15 });
 	});

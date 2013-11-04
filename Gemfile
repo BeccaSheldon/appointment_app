@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'fullcalendar-rails'
+
 gem 'jquery-ui-rails'
-
 gem 'zurb-foundation'
-
 gem 'carrierwave'
 gem 'rmagick'
-
 gem 'pry'
 gem 'hirb'
 gem 'better_errors'

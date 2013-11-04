@@ -16,6 +16,7 @@
 //= require foundation
 //= require jquery.ui.all
 //= require jquery.timepicker.js
+//= require fullcalendar
 //= require_self
 
 $(function(){ $(document).foundation(); });

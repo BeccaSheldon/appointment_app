@@ -1,22 +1,33 @@
-/ - if current_user.id.to_s == params[:id]
-/ 	= @my_appointments.each do |appointment|
-/ 		%div.location= appointment.location
-/ 		%div.date= appointment.time
+!!!
+%html
+  %head
+    %link{:href => "../fullcalendar/fullcalendar.css", :rel => "stylesheet"}/
+    %script{:src => "../lib/jquery.min.js"}
+    %script{:src => "../lib/jquery-ui.custom.min.js"}
+    %script{:src => "../fullcalendar/fullcalendar.min.js"}
+    :javascript
+      $(document).ready(function() {
+      
+      	var date = new Date();
+      	var d = date.getDate();
+      	var m = date.getMonth();
+      	var y = date.getFullYear();
+      	
+      	$('#calendar').fullCalendar({
+      		editable: true
+      	});
+      	
+      });
+    :css
+      body {
+      	margin-top: 40px;
+      	text-align: left;
+      	font-size: 14px;
+      	}
 
-%div#calendar
-	%div#month= link_to Time.now.strftime('%B, %Y')
-	%ul.calendar_week
-		%li.weekday
-			%p #{Time.now.strftime('%d')}
-		%li.weekday
-			%p #{Time.now.strftime('%d')}
-		%li.weekday
-			%p #{Time.now.strftime('%d')}
-		%li.weekday
-			%p #{Time.now.strftime('%d')}
-		%li.weekday
-			%p #{Time.now.strftime('%d')}
-		%li.weekday
-			%p #{Time.now.strftime('%d')}
-
-= stylesheet_link_tag "assets/stylesheets/calendar_stylesheet"
+      #calendar {
+      	width: 100%;
+      	margin: 0 auto;
+      	}
+  %body
+    #calendar

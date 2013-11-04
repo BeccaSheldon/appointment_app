@@ -15,6 +15,7 @@
 .row
 	.columns.large-12
 		%h3 Make an appointment with #{@user.name}
+		%br/
 .row
 	=form_for @appointment do |f|
 		.columns.large-6
@@ -24,18 +25,14 @@
 			= f.label :time 
 			= f.text_field :time
 		.columns.large-3
-			= f.label :date
+			= f.label :from
 			= f.text_field :date
 		.columns.large-3
+			= f.label :to
+			= f.text_field :date
+		.columns.large-6
+			= f.label :ready?
 			= f.submit "Schedule it!", class: "full_button"
-
 .row
 	.columns.large-12
-		- if current_user.id == params[:id]
-			%h3 Your Schedule:
-		- else
-			%h3 #{@user.name.upcase}'s Schedule:
-			%br/
-	.columns.large-12.appointments_view
-		=render 'users/calendar'
-
+		=render 'calendar'

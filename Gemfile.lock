@@ -55,6 +55,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    fullcalendar-rails (1.6.4.0)
     google-webfonts (0.1.2)
       actionpack (>= 3.0.0)
     haml (4.0.3)
@@ -159,6 +160,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
+  fullcalendar-rails (~> 1.6.4.0)
   google-webfonts
   haml
   hirb
